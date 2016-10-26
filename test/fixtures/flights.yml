@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-10-26
+  plane: MyString
+  total_pax: 1
+  total_nc_pax: 1
+  start_time: 2016-10-26 13:21:44
+  finish_time: 2016-10-26 13:21:44
+
+two:
+  date: 2016-10-26
+  plane: MyString
+  total_pax: 1
+  total_nc_pax: 1
+  start_time: 2016-10-26 13:21:44
+  finish_time: 2016-10-26 13:21:44

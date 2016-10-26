@@ -1,0 +1,38 @@
+<h1>new flight to enter here </h1>
+
+<%= form_for :flight, url: flights_path do |f| %>
+	<p>
+		<%= f.label :date %> 
+		<%= f.date_field :date %>
+	</p>
+	<p>
+		<%= f.label :plane %> 
+		<%= f.text_field :plane %>
+	</p>
+	<p>
+		<%= f.label :inspection_regime %> 
+
+	</p>
+	<p>
+		<%= f.label :total_pax %> 
+		<%= f.number_field :total_pax %>
+	</p>
+	<p>
+		<%= f.label :total_nc_pax %> 
+		<%= f.number_field :total_nc_pax %>
+	</p>
+	<p>
+		<%= f.label :start_time %> 
+		<%= f.time_field :start_time %>
+	</p>
+	<p>
+		<%= f.label :finish_time %> 
+		<%= f.time_field :finish_time %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+	
+
+
+<% end %>
