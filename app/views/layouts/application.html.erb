@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+  <meta name="keywords" content="Biosecurity, Tasmania, Border">
+  <meta name="description" content="Gather biosecurity border data. Intelligence. Risk management">
+
 <html>
   <head>
     <title>QuarantineBorder</title>
@@ -9,6 +15,9 @@
   </head>
 
   <body>
+
+    <%= render 'modules/navbar' %>
     <%= yield %>
+    <%= render 'modules/footer' %>
   </body>
 </html>
