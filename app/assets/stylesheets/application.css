@@ -1,8 +1,0 @@
-*= require normalize-rails
-*= require_self
-*= require_tree .
-
-@import "base/_variables";
-@import "base/_mixins";
-@import "base/_global";
-@import 'modules/_page-section';

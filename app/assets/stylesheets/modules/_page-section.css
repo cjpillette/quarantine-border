@@ -1,0 +1,21 @@
+.page-section {
+	padding: 1.2rem 0;
+	color: $mainBlue;	
+	
+}
+
+@include responsive_width(small){ .page-section { background-color: skyblue; } }
+@include responsive_width(medium){ .page-section { background-color: lightblue; } }
+@include responsive_width(big){ .page-section { background-color: cyan; } }
+
+
+.row {
+
+}
+
+.row-large-4 {
+	float: left;
+	width: 33.33%;
+
+
+}

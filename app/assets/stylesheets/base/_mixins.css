@@ -1,25 +1,13 @@
-@define-mixin atSmall {
-  @media (min-width: 530px) {
-    @mixin-content;
+@mixin responsive_width($width) {
+  @if $width == big {
+    @media (min-width: 64.375em) {@content; }
+  }
+  @else if $width == medium {
+    @media (min-width: 40em) {@content; }
+  }
+  @else if $width == small {
+    @media (min-width: 20em) {@content; }
   }
 }
 
-@define-mixin atMedium {
-  @media (min-width: 800px) {
-    @mixin-content;
-  }
-}
 
-@define-mixin atLarge {
-  @media (min-width: 1010px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin clearfix {
-  &::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-}
