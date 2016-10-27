@@ -1,7 +1,23 @@
-<% @flights.each do |flight| %>
-	<%= link_to flight.plane, flight %><br>
-	<%= flight.date %>
-	<hr>
-<% end %>
+<%= link_to "Enter new flight", new_flight_path %>
+<div class="wrapper">
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th>Date</th>
+			<th>Flight</th>
+			<th>Total pax</th>
+			<th>Non-compliance</th>
+			
+		</tr>
+			<% @flights.each do |flight| %>
+				<tr>
+					<th><%= flight.date %></th>
+					<th><%= link_to flight.plane, edit_flight_path(flight) %></th>
+					<th><%= flight.total_pax %></th>
+					<th><%= flight.total_nc_pax %></th>				
+				</tr>
+			<% end %>
+		
+	</table>
+</div>
 
 

@@ -1,0 +1,18 @@
+	<%= simple_form_for @flight do |f|%>
+	
+				<%= f.input :date, label:"Date", :value => Date.today %>
+
+				<%= f.input :plane, label:"Flight Number" %>
+			
+				<%= f.label :inspection_regime %> 
+
+				<%= f.input :total_pax, label:"Number of passengers" %>
+			
+				<%= f.input :total_nc_pax, label:"Number of non-compliant pax" %>
+		
+				<%= f.input :start_time, label:"Start inspecting at" %>
+			
+				<%= f.input :finish_time, label:"Finish inspecting at" %>
+			
+				<%= f.button :submit, "Save" %>
+		<% end %>
