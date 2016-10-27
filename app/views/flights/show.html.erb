@@ -3,5 +3,7 @@
 	<h3><%= @flight.date%></h3>
 	<p><%= @flight.total_pax %> number of passengers</p>
 	<p><%= @flight.total_nc_pax %> number of passengers who were seized with or surrendered BRM to officer</p>
+
+	<%= link_to "Delete", flight_path(@flight), method: :delete, data: {confirm: "Are you sure?"} %>
 	
 </div>

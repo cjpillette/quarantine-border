@@ -10,9 +10,11 @@
 			
 				<%= f.input :total_nc_pax, label:"Number of non-compliant pax" %>
 		
-				<%= f.input :start_time, label:"Start inspecting at" %>
+				Start Inspection at:<%= f.time_select :start_time, :value => Time.now %> <br>
 			
-				<%= f.input :finish_time, label:"Finish inspecting at" %>
+				Finish Inspection at:<%= f.time_select :finish_time%> <br>
 			
 				<%= f.button :submit, "Save" %>
+
 		<% end %>
+

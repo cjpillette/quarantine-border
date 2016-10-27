@@ -1,4 +1,7 @@
 <h1> Update flight details </h1>
 	<div class="wrapper">
 		<%= render 'modules/flight-form' %>		
-	</div>
+	
+		<%= link_to "Delete", flight_path(@flight), class:"btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+
+</div>
