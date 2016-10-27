@@ -1,39 +1,25 @@
 <div class="wrapper">
-<h1>Enter new flight</h1>
-	<div class="flight-form">
-<%= form_for :flight, url: flights_path do |f|%>
-	<p>
-		<%= f.label :date %> 
-		<%= f.date_field :date %>
-	</p>
-	<p>
-		<%= f.label :flight_number %> 
-		<%= f.text_field :plane %>
-	</p>
-	<p>
-		<%= f.label :inspection_regime %> 
+	<h1>Enter new flight</h1>
+		<div class="flight-form">
+			<%= simple_form_for @flight do |f|%>
+	
+				<%= f.input :date, label:"Date", :value => Date.today.strftime("%d, %B, %Y") %>
 
-	</p>
-	<p>
-		<%= f.label :total_pax %> 
-		<%= f.number_field :total_pax %>
-	</p>
-	<p>
-		<%= f.label :total_nc_pax %> 
-		<%= f.number_field :total_nc_pax %>
-	</p>
-	<p>
-		<%= f.label :start_time %> 
-		<%= f.time_field :start_time %>
-	</p>
-	<p>
-		<%= f.label :finish_time %> 
-		<%= f.time_field :finish_time %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
-	</div>
+				<%= f.input :plane, label:"Flight Number" %>
+			
+				<%= f.label :inspection_regime %> 
+
+				<%= f.input :total_pax, label:"Number of passengers" %>
+			
+				<%= f.input :total_nc_pax, label:"Number of non-compliant pax" %>
+		
+				<%= f.input :start_time, label:"Start inspecting at" %>
+			
+				<%= f.input :finish_time, label:"Finish inspecting at" %>
+			
+				<%= f.submit "Save" %>
+		<% end %>
+
+		</div>
 </div>
 
-<% end %>
