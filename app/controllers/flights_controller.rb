@@ -16,7 +16,7 @@ class FlightsController < ApplicationController
 		@flight = Flight.new(flight_params)
 		@flight.save
 
-		redirect_to @flight
+		redirect_to flights_path
 		end
 
 		

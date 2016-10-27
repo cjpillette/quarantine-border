@@ -1,9 +1,10 @@
 <div class="page-section">
-  <h2>Airport</h2>
+  <h2 class="section-title">Airport</h2>
+   <%= image_tag "photo-airport1.jpg", class:"photo clearfix" %> 
     <div class="row">
-      <div class="row-large-4">Flight</div>    
-      <div class="row-large-4">Freight</div>     
-      <div class="row-large-4">Collection Bin</div>
+      <a class="col-third col-text-center" href="#"><%= link_to "Flight", new_flight_path %></a>    
+      <a class="col-third col-text-center" href="#">Freight</a>     
+      <a class="col-third col-text-center" href="#">Collection Bin</a>
     </div>
 </div>
 
@@ -16,6 +17,6 @@
     </ul>
 </div>
 
-<div class="page-section">
+<div>
   <h2>Road Freight</h2>
 </div>

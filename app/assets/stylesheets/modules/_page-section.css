@@ -1,21 +1,33 @@
 .page-section {
-	padding: 1.2rem 0;
-	color: $mainBlue;	
-	
+	padding-bottom: 1.3rem;	
 }
 
-@include responsive_width(small){ .page-section { background-color: skyblue; } }
-@include responsive_width(medium){ .page-section { background-color: lightblue; } }
-@include responsive_width(big){ .page-section { background-color: cyan; } }
-
-
-.row {
-
-}
-
-.row-large-4 {
+.col-third {
 	float: left;
 	width: 33.33%;
+}
 
+.col-text-center {
+	text-align: center;
 
 }
+
+.clearfix:after {
+	content: "";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.photo {
+	border: 3px solid black;
+	opacity: 0.5;
+	display: block;
+	position: relative;
+}
+
+.boxed {
+	border: 1px red dotted;
+}
+

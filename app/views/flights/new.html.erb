@@ -1,12 +1,13 @@
-<h1>new flight to enter here </h1>
-
-<%= form_for :flight, url: flights_path do |f| %>
+<div class="wrapper">
+<h1>Enter new flight</h1>
+	<div class="flight-form">
+<%= form_for :flight, url: flights_path do |f|%>
 	<p>
 		<%= f.label :date %> 
 		<%= f.date_field :date %>
 	</p>
 	<p>
-		<%= f.label :plane %> 
+		<%= f.label :flight_number %> 
 		<%= f.text_field :plane %>
 	</p>
 	<p>
@@ -32,7 +33,7 @@
 	<p>
 		<%= f.submit %>
 	</p>
-	
-
+	</div>
+</div>
 
 <% end %>
