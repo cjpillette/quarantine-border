@@ -1,6 +1,26 @@
 <h1> Update flight details </h1>
 	<div class="wrapper">
-		<%= render 'modules/flight-form' %>		
+		<%= simple_form_for @flight do |f|%>
+
+				<%= f.select :airport_id, @airports %>
+	
+				<%= f.input :date, as: :string, input_html: {class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
+
+				<%= f.input :plane, label:"Flight Number" %>
+			
+				<%= f.label :inspection_regime %> 
+
+				<%= f.input :total_pax, label:"Number of passengers" %>
+			
+				<%= f.input :total_nc_pax, label:"Number of non-compliant pax" %>
+		
+				Start Inspection at:<%= f.time_select :start_time, :value => Time.now %> <br>
+			
+				Finish Inspection at:<%= f.time_select :finish_time, :value => Time.now %> <br>
+			
+				<%= f.button :submit, "Save" %>
+
+		<% end %>	
 	
 		<%= link_to "Delete", flight_path(@flight), class:"btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
 

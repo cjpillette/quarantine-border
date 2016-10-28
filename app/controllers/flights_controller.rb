@@ -30,7 +30,7 @@ before_action :display_airport
 
 		def update
 			if @flight.update(flight_params)
-				redirect_to flight_path(@flight)
+				redirect_to flights_path
 			else
 				render 'edit'
 			end
