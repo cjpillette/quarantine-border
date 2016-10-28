@@ -1,6 +1,8 @@
 	<%= simple_form_for @flight do |f|%>
+
+				<%= select_tag(:airport_id, options_for_select(@airports), :prompt => "select airport")%>
 	
-				<%= f.input :date, label:"Date", :value => Date.today %>
+				<%= f.input :date, as: :string, input_html: {class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
 
 				<%= f.input :plane, label:"Flight Number" %>
 			
@@ -12,7 +14,7 @@
 		
 				Start Inspection at:<%= f.time_select :start_time, :value => Time.now %> <br>
 			
-				Finish Inspection at:<%= f.time_select :finish_time%> <br>
+				Finish Inspection at:<%= f.time_select :finish_time, :value => Time.now %> <br>
 			
 				<%= f.button :submit, "Save" %>
 
