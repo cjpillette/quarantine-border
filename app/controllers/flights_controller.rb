@@ -3,7 +3,12 @@ before_action :find_flight, only: [:show, :edit, :update, :destroy]
 before_action :display_airport
 
 		def index
-			@flights = Flight.all.order("created_at DESC")
+			if params[:airport].blank?
+				@flights = Flight.all.order("created_at DESC")
+			else
+				@airport_id = Airport.find_by(name: params[:airport]).id
+				@flights = Flight.where(:airport_id => @airport_id).order("created_at DESC")
+			end
 		end
 
 		def new

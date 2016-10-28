@@ -1,6 +1,20 @@
-<%= link_to "Enter new flight", new_flight_path %>
-<%= link_to "Back", root_path %>
+<nav class="navbar navbar-default">
+	<%= link_to "Enter new flight",  new_flight_path %>
+	<%= link_to "Back", root_path %>
 
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Airports <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+      <% Airport.all.each do |airport| %>
+        <li>
+          <%= link_to airport.name, flights_path(airport: airport.name), class: "link" %>
+        </li>
+      <% end %>
+      </ul>
+  </li>
+</nav>
+
+<h1 class="current-category"><%= params[:airport]%></h1>
 
 <div class="wrapper">
 	<table class="table table-striped table-bordered">
@@ -11,14 +25,14 @@
 			<th>Non-compliance</th>
 			
 		</tr>
-			<% @flights.each do |flight| %>
-				<tr>
-					<th><%= flight.date %></th>
-					<th><%= link_to flight.plane, edit_flight_path(flight) %></th>
-					<th><%= flight.total_pax %></th>
-					<th><%= flight.total_nc_pax %></th>				
-				</tr>
-			<% end %>
+				<% @flights.each do |flight| %>
+					<tr>
+						<th><%= flight.date %></th>
+						<th><%= link_to flight.plane, edit_flight_path(flight) %></th>
+						<th><%= flight.total_pax %></th>
+						<th><%= flight.total_nc_pax %></th>				
+					</tr>
+				<% end %>  
 		
 	</table>
 </div>
