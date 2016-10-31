@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Brmcollections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Collectedon</th>
+      <th>Weight</th>
+      <th>Chopped</th>
+      <th>Mqeisubmitted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @brmcollections.each do |brmcollection| %>
+      <tr>
+        <td><%= brmcollection.collectedon %></td>
+        <td><%= brmcollection.weight %></td>
+        <td><%= brmcollection.chopped %></td>
+        <td><%= brmcollection.mqeisubmitted %></td>
+        <td><%= link_to 'Show', brmcollection %></td>
+        <td><%= link_to 'Edit', edit_brmcollection_path(brmcollection) %></td>
+        <td><%= link_to 'Destroy', brmcollection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Brmcollection', new_brmcollection_path %>

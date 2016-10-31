@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :brmcollections
   resources :flights
   root 'pages#index'
 

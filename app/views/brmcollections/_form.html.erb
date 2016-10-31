@@ -1,0 +1,14 @@
+<%= simple_form_for(@brmcollection) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :collectedon %>
+    <%= f.input :weight %>
+    <%= f.input :chopped %>
+    <%= f.input :mqeisubmitted %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

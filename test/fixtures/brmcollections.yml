@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  collectedon: 2016-11-01 07:19:50
+  weight: 9.99
+  chopped: false
+  mqeisubmitted: false
+
+two:
+  collectedon: 2016-11-01 07:19:50
+  weight: 9.99
+  chopped: false
+  mqeisubmitted: false

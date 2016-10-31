@@ -1,0 +1,2 @@
+class Brmcollection < ApplicationRecord
+end

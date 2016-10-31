@@ -1,0 +1,1 @@
+json.array! @brmcollections, partial: 'brmcollections/brmcollection', as: :brmcollection
