@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  collection_date: 2016-10-31 11:15:15
+  type: 1
+  weight: 9.99
+  inspected_for_brm: false
+  mqei_submitted: false
+
+two:
+  collection_date: 2016-10-31 11:15:15
+  type: 1
+  weight: 9.99
+  inspected_for_brm: false
+  mqei_submitted: false
