@@ -20,8 +20,8 @@
   <tbody>
     <% @brmcollections.each do |brmcollection| %>
       <tr>
-        <td><%= brmcollection.airport_id%></td>
-        <td><%= link_to brmcollection.collectedon, edit_brmcollection_path(brmcollection) %></td>
+        <td><%= brmcollection.airport.name%></td>
+        <td><%= link_to brmcollection.collectedon.to_formatted_s(:long), edit_brmcollection_path(brmcollection) %></td>
         <td><%= brmcollection.bordergranularity_id%></td>
         <td><%= brmcollection.weight %></td>
         <td><%= brmcollection.chopped %></td>

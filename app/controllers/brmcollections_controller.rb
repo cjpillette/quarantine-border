@@ -7,6 +7,7 @@ class BrmcollectionsController < ApplicationController
   # GET /brmcollections.json
   def index
     @brmcollections = Brmcollection.all
+    
   end
 
   # GET /brmcollections/1
@@ -73,7 +74,7 @@ class BrmcollectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brmcollection_params
-      params.require(:brmcollection).permit(:collectedon, :weight, :chopped, :mqeisubmitted)
+      params.require(:brmcollection).permit(:collectedon, :weight, :chopped, :mqeisubmitted, :airport_id, :bordergranularity_id)
     end
 
     def display_airport
