@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031201950) do
+ActiveRecord::Schema.define(version: 20161031205735) do
 
   create_table "airports", force: :cascade do |t|
     t.string   "name"
@@ -18,20 +18,10 @@ ActiveRecord::Schema.define(version: 20161031201950) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bin_collections", force: :cascade do |t|
-    t.datetime "collection_date"
-    t.decimal  "weight"
-    t.boolean  "inspected_for_brm"
-    t.boolean  "mqei_submitted"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "airport_id"
-  end
-
-  create_table "bin_types", force: :cascade do |t|
-    t.string   "name"
+  create_table "bordergranularities", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "checkpoint"
   end
 
   create_table "brmcollections", force: :cascade do |t|

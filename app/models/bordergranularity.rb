@@ -1,0 +1,2 @@
+class Bordergranularity < ApplicationRecord
+end

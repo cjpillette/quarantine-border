@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BinCollectionTest < ActiveSupport::TestCase
+class BordergranularityTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
