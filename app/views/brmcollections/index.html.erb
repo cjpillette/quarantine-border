@@ -1,28 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Brmcollections</h1>
+<h1>Bin Collection</h1>
+<%= link_to 'New Brmcollection', new_brmcollection_path %>
 
-<table>
+<div class="wrapper">
+  <table class="table table-striped table-bordered">
+   
   <thead>
     <tr>
-      <th>Collectedon</th>
+      <th>Airport</th>
+      <th>Bin Collected on</th>
+      <th>Bin Type</th>
       <th>Weight</th>
-      <th>Chopped</th>
-      <th>Mqeisubmitted</th>
-      <th colspan="3"></th>
+      <th>Chopped and inspected?</th>
+      <th>MQEI submitted?</th>
     </tr>
   </thead>
 
   <tbody>
     <% @brmcollections.each do |brmcollection| %>
       <tr>
-        <td><%= brmcollection.collectedon %></td>
+        <td><%= brmcollection.airport_id%></td>
+        <td><%= link_to brmcollection.collectedon, edit_brmcollection_path(brmcollection) %></td>
+        <td><%= brmcollection.bordergranularity_id%></td>
         <td><%= brmcollection.weight %></td>
         <td><%= brmcollection.chopped %></td>
         <td><%= brmcollection.mqeisubmitted %></td>
-        <td><%= link_to 'Show', brmcollection %></td>
-        <td><%= link_to 'Edit', edit_brmcollection_path(brmcollection) %></td>
-        <td><%= link_to 'Destroy', brmcollection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Brmcollection', new_brmcollection_path %>
+

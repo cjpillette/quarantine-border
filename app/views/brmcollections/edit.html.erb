@@ -2,5 +2,6 @@
 
 <%= render 'form', brmcollection: @brmcollection %>
 
-<%= link_to 'Show', @brmcollection %> |
+<%= link_to "Delete", brmcollection_path(@brmcollection), class:"btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+
 <%= link_to 'Back', brmcollections_path %>

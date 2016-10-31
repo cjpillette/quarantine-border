@@ -1,1 +1,0 @@
-json.partial! "brmcollections/brmcollection", brmcollection: @brmcollection

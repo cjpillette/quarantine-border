@@ -1,5 +1,7 @@
 class BrmcollectionsController < ApplicationController
   before_action :set_brmcollection, only: [:show, :edit, :update, :destroy]
+  before_action :display_airport, :display_bordergranularity
+  
 
   # GET /brmcollections
   # GET /brmcollections.json
@@ -25,10 +27,12 @@ class BrmcollectionsController < ApplicationController
   # POST /brmcollections.json
   def create
     @brmcollection = Brmcollection.new(brmcollection_params)
+    @brmcollection.airport_id = params[:airport_id]
+    @brmcollection.bordergranularity_id = params[:bordergranularity_id]
 
     respond_to do |format|
       if @brmcollection.save
-        format.html { redirect_to @brmcollection, notice: 'Brmcollection was successfully created.' }
+        format.html { redirect_to brmcollections_path, notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @brmcollection }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class BrmcollectionsController < ApplicationController
   def update
     respond_to do |format|
       if @brmcollection.update(brmcollection_params)
-        format.html { redirect_to @brmcollection, notice: 'Brmcollection was successfully updated.' }
+        format.html { redirect_to brmcollections_path, notice: 'Entry was successfully updated.' }
         format.json { render :show, status: :ok, location: @brmcollection }
       else
         format.html { render :edit }
@@ -70,5 +74,13 @@ class BrmcollectionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def brmcollection_params
       params.require(:brmcollection).permit(:collectedon, :weight, :chopped, :mqeisubmitted)
+    end
+
+    def display_airport
+      @airports = Airport.all.map{ |c| [c.name, c.id]}
+    end
+
+    def display_bordergranularity
+      @bordergranularities = Bordergranularity.all.map{ |c| [c.checkpoint, c.id]}
     end
 end
