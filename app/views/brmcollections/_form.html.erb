@@ -4,13 +4,13 @@
   <div class="form-inputs">
     <%= select_tag(:airport_id, options_for_select(@airports), :prompt => "select airport")%>
     <%= select_tag(:bordergranularity_id, options_for_select(@bordergranularities), :prompt => "select bin type")%>
-    <%= f.input :collectedon %>
-    <%= f.input :weight %>
-    <%= f.input :chopped %>
-    <%= f.input :mqeisubmitted %>
+    <%= f.input :collectedon, order: [:day, :month, :year], label: 'Date/time of collection' %>
+    <%= f.input :weight, label: 'Weight (in Kg)' %>
+    <%= f.input :chopped, label: 'BRM chopped and inspected?' %>
+    <%= f.input :mqeisubmitted, label: 'MQEI submitted?' %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Save" %>
   </div>
 <% end %>

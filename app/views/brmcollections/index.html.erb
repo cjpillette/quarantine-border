@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Bin Collection</h1>
-<%= link_to 'New Brmcollection', new_brmcollection_path %>
+<%= link_to 'New Bin Service', new_brmcollection_path %>
+<%= link_to 'Back', root_path %>
 
 <div class="wrapper">
   <table class="table table-striped table-bordered">
@@ -22,14 +23,15 @@
       <tr>
         <td><%= brmcollection.airport.name%></td>
         <td><%= link_to brmcollection.collectedon.to_formatted_s(:long), edit_brmcollection_path(brmcollection) %></td>
-        <td><%= brmcollection.bordergranularity_id%></td>
+        <td><%= brmcollection.bordergranularity.checkpoint%></td>
         <td><%= brmcollection.weight %></td>
-        <td><%= brmcollection.chopped %></td>
-        <td><%= brmcollection.mqeisubmitted %></td>
+        <td><%= yesno(brmcollection.chopped) %></td>
+        <td><%= yesno(brmcollection.mqeisubmitted) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
 
 <br>
 

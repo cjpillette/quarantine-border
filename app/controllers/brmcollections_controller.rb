@@ -6,7 +6,8 @@ class BrmcollectionsController < ApplicationController
   # GET /brmcollections
   # GET /brmcollections.json
   def index
-    @brmcollections = Brmcollection.all
+    @brmcollections = Brmcollection.all.order("created_at DESC")
+
     
   end
 

@@ -1,3 +1,3 @@
 class Bordergranularity < ApplicationRecord
-	has_many :brmcollections, foreign_key:"bordergranularity_id"
+	has_many :brmcollections
 end

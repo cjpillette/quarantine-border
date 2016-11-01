@@ -1,5 +1,5 @@
 class Brmcollection < ApplicationRecord
-	belongs_to :airport, foreign_key: "airport_id" 
-	belongs_to :bordergranularity, foreign_key: "bordergranularity_id"
+	belongs_to :airport
+	belongs_to :bordergranularity
 	
 end
