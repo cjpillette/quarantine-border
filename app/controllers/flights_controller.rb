@@ -1,6 +1,7 @@
 class FlightsController < ApplicationController
 before_action :find_flight, only: [:show, :edit, :update, :destroy]
 before_action :display_airport
+before_action :display_inspectionregime
 
 		def index
 			if params[:airport].blank?
@@ -20,7 +21,6 @@ before_action :display_airport
 
 		def create			
 			@flight = Flight.new(flight_params)
-			@flight.airport_id = params[:airport_id]
 			
 			if @flight.save
 			redirect_to flights_path
@@ -51,7 +51,7 @@ before_action :display_airport
 
 	private
 		def flight_params
-			params.require(:flight).permit(:date, :plane, :total_pax, :total_nc_pax, :start_time, :finish_time, :airport_id)
+			params.require(:flight).permit(:date, :plane, :total_pax, :total_nc_pax, :start_time, :finish_time, :airport_id, :inspectionregime_id)
 		end
 
 		def find_flight
@@ -60,6 +60,10 @@ before_action :display_airport
 
 		def display_airport
 			@airports = Airport.all.map{ |c| [c.name, c.id]}
+		end
+
+		def display_inspectionregime
+			@inspectionregimes = Inspectionregime.all.map{ |c| [c.name, c.id]}
 		end
 
 end

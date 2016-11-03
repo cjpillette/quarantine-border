@@ -1,12 +1,13 @@
 	<%= simple_form_for @flight do |f|%>
 
-				<%= select_tag(:airport_id, options_for_select(@airports), :prompt => "select airport")%>
+				
+				<%= f.collection_radio_buttons(:airport_id, Airport.all, :id, :name) %> 
 	
 				<%= f.input :date, as: :string, input_html: {class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
 
 				<%= f.input :plane, label:"Flight Number" %>
 			
-				<%= f.label :inspection_regime %> 
+				<%= f.collection_radio_buttons(:inspectionregime_id, Inspectionregime.all, :id, :name) %> 
 
 				<%= f.input :total_pax, label:"Number of passengers" %>
 			

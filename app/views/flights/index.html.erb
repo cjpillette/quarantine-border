@@ -8,8 +8,11 @@
       <% Airport.all.each do |airport| %>
         <li>
           <%= link_to airport.name, flights_path(airport: airport.name), class: "link" %>
-        </li>
+        </li>      
       <% end %>
+      <li>
+       <%= link_to "ALL", flights_path, class: "link" %>
+       </li>
       </ul>
   </li>
 </nav>
@@ -19,16 +22,20 @@
 <div class="wrapper">
 	<table class="table table-striped table-bordered">
 		<tr>
+			<th>Airport</th>
 			<th>Date</th>
 			<th>Flight</th>
+			<th>Inspection regime</th>
 			<th>Total pax</th>
 			<th>Non-compliance</th>
 			
 		</tr>
 				<% @flights.each do |flight| %>
 					<tr>
+						<th><%= flight.airport.name %></th>
 						<th><%= flight.date %></th>
 						<th><%= link_to flight.plane, edit_flight_path(flight) %></th>
+						<th><%= flight.inspectionregime.name%></th>
 						<th><%= flight.total_pax %></th>
 						<th><%= flight.total_nc_pax %></th>				
 					</tr>
