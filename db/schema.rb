@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103211652) do
+ActiveRecord::Schema.define(version: 20161104003323) do
 
   create_table "airports", force: :cascade do |t|
     t.string   "name"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(version: 20161103211652) do
     t.integer  "airport_id"
   end
 
+  create_table "brmtypes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "flights", force: :cascade do |t|
     t.date     "date"
     t.string   "plane"
@@ -46,6 +52,24 @@ ActiveRecord::Schema.define(version: 20161103211652) do
     t.datetime "updated_at",          null: false
     t.integer  "airport_id"
     t.integer  "inspectionregime_id"
+  end
+
+  create_table "freights", force: :cascade do |t|
+    t.date     "inspectedon"
+    t.string   "carrier"
+    t.integer  "brmtype_id"
+    t.integer  "ctnpresented"
+    t.integer  "ctnreleased"
+    t.datetime "start_time"
+    t.datetime "finish_time"
+    t.string   "importer"
+    t.string   "exporter"
+    t.string   "permit"
+    t.boolean  "noncompliance"
+    t.text     "comment"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "airport_id"
   end
 
   create_table "inspectionregimes", force: :cascade do |t|

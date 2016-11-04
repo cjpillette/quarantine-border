@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :brmcollections
   resources :flights
+  resources :freights
   root 'pages#index'
 
 

@@ -1,0 +1,32 @@
+	<%= simple_form_for @freight do |f|%>
+
+				
+				<%= f.collection_radio_buttons(:airport_id, Airport.all, :id, :name) %> 
+	
+				<%= f.input :inspectedon, as: :string, input_html: {class: "datepicker", value: Time.now.strftime('%d-%m-%Y')}, label:"Inspected on" %>
+
+				<%= f.input :carrier, label:"Carrier / Flight Number", required: false %>
+			
+				<%= f.input :brmtype_id, :collection => Brmtype.all, label:"freight type" %>
+
+				<%= f.input :ctnpresented, label:"Number of cartons presented" %>
+			
+				<%= f.input :ctnreleased, label:"Number of cartons released" %>
+
+				<%= f.input :importer, label:"Importer name" %>
+
+				<%= f.input :exporter, label:"Exporter name" %>
+
+				<%= f.input :permit, label:"Permit number", required: false %>
+
+				<%= f.input :noncompliance, as: :boolean, checked_value: true, unchecked_value: false, label:"Non compliance" %>
+
+				<%= f.input :comment, as: :text, label:"Comment", require: false %>
+		
+				Start Inspection at:<%= f.time_select :start_time, :value => Time.now %> <br>
+			
+				Finish Inspection at:<%= f.time_select :finish_time, :value => Time.now %> <br>
+			
+				<%= f.button :submit, "Save" %>
+
+		<% end %>

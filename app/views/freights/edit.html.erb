@@ -1,0 +1,7 @@
+<h1>Editing Freight</h1>
+
+<%= render 'modules/freight-form', freight: @freight %>
+
+<%= link_to "Delete", freight_path(@freight), class:"btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+
+<%= link_to 'Back', freights_path %>
