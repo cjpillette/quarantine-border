@@ -1,7 +1,8 @@
-<nav class="navbar navbar-default">
-	<%= link_to "Enter new freight",  new_freight_path %>
-	<%= link_to "Back", root_path %>
-</nav>
+	<nav class="navbar navbar-default">
+		<%= button_to 'Enter new freight', new_freight_path, method: :get, class: 'btn btn-default' %>
+		<%= button_to 'Back', root_path, class: 'btn btn-default' %>
+	</nav>
+
 
 
 
@@ -18,7 +19,7 @@
 						<th><%= freight.airport.name%></th>
 						<th><%= freight.inspectedon %></th>
 						<th><%= freight.carrier %></th>
-						<th><%= link_to freight.brmtype.name, edit_freight_path(freight) %></th>						
+						<th><%= link_to freight.brmtype.name, edit_freight_path(freight) %></th>					
 					</tr>
 				<% end %>  
 		

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Bin Collection</h1>
-<%= link_to 'New Bin Service', new_brmcollection_path %>
-<%= link_to 'Back', root_path %>
+<%= button_to 'New bin service', new_brmcollection_path, method: :get, class: 'btn btn-default' %>
+<%= button_to 'Back', root_path, class: 'btn btn-default' %>
 
 <div class="wrapper">
   <table class="table table-striped table-bordered">

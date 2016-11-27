@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104003323) do
+ActiveRecord::Schema.define(version: 20161104025421) do
 
   create_table "airports", force: :cascade do |t|
     t.string   "name"
@@ -67,9 +67,13 @@ ActiveRecord::Schema.define(version: 20161104003323) do
     t.string   "permit"
     t.boolean  "noncompliance"
     t.text     "comment"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "airport_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "inspectionregimes", force: :cascade do |t|

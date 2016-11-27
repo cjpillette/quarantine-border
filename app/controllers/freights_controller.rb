@@ -66,7 +66,7 @@ class FreightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def freight_params
-      params.require(:freight).permit(:airport_id, :inspectedon, :carrier, :brmtype_id, :ctnpresented, :ctnreleased, :start_time, :finish_time, :importer, :exporter, :permit, :noncompliance, :comment)
+      params.require(:freight).permit(:airport_id, :inspectedon, :carrier, :brmtype_id, :ctnpresented, :ctnreleased, :start_time, :finish_time, :importer, :exporter, :permit, :noncompliance, :avatar, :comment)
     end
 
     def display_brmtype
@@ -76,6 +76,5 @@ class FreightsController < ApplicationController
     def display_airport
       @airports = Airport.all.map{ |c| [c.name, c.id]}
     end
-
 	
 end

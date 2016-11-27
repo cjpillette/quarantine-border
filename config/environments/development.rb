@@ -10,6 +10,8 @@ Rails.application.configure do
 
   config.active_record.default_timezone = :local
 
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
   # Do not eager load code on boot.
   config.eager_load = false
 
