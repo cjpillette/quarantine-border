@@ -1,13 +1,11 @@
-<div class="page-section">
-  <h2 class="section-title">Airport</h2>
-   <%= image_tag "photo-airport1.jpg", class:"photo clearfix" %> 
-    <div class="row">
-      <%= button_to 'Flight', flights_path, method: :get, class: 'btn btn-default' %>
-      <%= button_to 'Freight', freights_path, method: :get, class: 'btn btn-default' %>
-      <%= button_to 'BRM Collection bin', brmcollections_path, method: :get, class: 'btn btn-default' %>
+<div class="container">
+   <%= image_tag "photo-airport1.jpg"%>
+    <div class="btn-group" role="group">
+      <%= button_to 'Flight', flights_path, method: :get, class: 'btn btn-default'%>
+      <%= button_to 'Freight', freights_path, method: :get, class: 'btn btn-default'%>
+      <%= button_to 'BRM Collection bin', brmcollections_path, method: :get, class: 'btn btn-default'%>
     </div>
-</div>
-
+  </div>
 
 
 <div>
