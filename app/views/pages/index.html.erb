@@ -1,21 +1,23 @@
-   <%= image_tag "photo-airport1.jpg"%>
-    <div class="btn-group" role="group">
-      <%= button_to 'Flight', flights_path, method: :get, class: 'btn btn-default'%>
-      <%= button_to 'Freight', freights_path, method: :get, class: 'btn btn-default'%>
-      <%= button_to 'BRM Collection bin', brmcollections_path, method: :get, class: 'btn btn-default'%>
-    </div>
+<div class="wrapper">
+  <div class="airport-section">
+      <%= image_tag "airport_small.png", class:"image" %>
+      <%= button_to 'Flight', flights_path, method: :get, class: 'visible-xs btn btn-default left-button'%>
+      <%= button_to 'Freight', freights_path, method: :get, class: 'visible-xs btn btn-default center-button'%>
+      <%= button_to 'Bin', brmcollections_path, method: :get, class: 'visible-xs btn btn-default right-button'%>
+  </div>
 
+  <div class="seaport-section">
+    <%= image_tag "Seaport_small.png", class:"image"%>   
+      <%= button_to 'SPoT', root_path, method: :get, class: 'visible-xs btn btn-default left-button'%>
+      <%= button_to 'Searoad', root_path, method: :get, class: 'visible-xs btn btn-default center-button'%>
+      <%= button_to 'Bell Bay', root_path, method: :get, class: 'visible-xs btn btn-default right-button'%>
+  </div>
 
-
-<div>
-  <h2>Seaport</h2>
-    <ul>
-      <li>SPoT</li>
-      <li>Searoad</li>
-      <li>Bell Bay</li>
-    </ul>
-</div>
-
-<div>
-  <h2>Road Freight</h2>
+  <div class="road-section">
+    <%= image_tag "traffic_small.jpeg", class:"image image-road img-responsive"%>
+    <%= button_to 'Express Post', root_path, method: :get, class: 'visible-xs btn btn-default left-button'%>
+    <%= button_to 'City freight', root_path, method: :get, class: 'visible-xs btn btn-default center-button'%>
+    <%= button_to 'PQA600', root_path, method: :get, class: 'visible-xs btn btn-default right-button'%>
+  </div>
+ 
 </div>
