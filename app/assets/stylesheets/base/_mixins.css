@@ -1,6 +1,6 @@
 @mixin responsive_width($width) {
   @if $width == large {
-    @media (min-width: 64.375em) {@content; }
+    @media (min-width: 64.375em) {@content;}
   }
   @else if $width == medium {
     @media (min-width: 40em) {@content; }

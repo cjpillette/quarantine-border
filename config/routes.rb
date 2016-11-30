@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   
+  get 'kpi/index'
+
   resources :brmcollections
   resources :flights
   resources :freights
+  resources :pages
+
   root 'pages#index'
 
 
